@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" 
+  integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <title>My accaunt</title>
+</head>
+<style>
+  .container{
+    max-width: 1330px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin: 0 auto;
+    background-color: coral;
+    
+  }
+  .user{
+    width: 200px;
+    height: 300px;
+    border-radius: 25px;
+    border: 1px solid balc;
+    background-color: cadetblue;
+    padding: 20px;
+  }
+  .img{
+    width: 150px;
+    height: 150px;
+    border: 2px solid red;
+    border-radius: 50%;
+    margin-bottom: 25px;
+  }
+  .container > div{
+    display: flex;
+    gap: 20px;
+  }
+  .form{
+    width: 350px;
+    height: 200px;
+    background-color: cadetblue;
+    padding: 20px;
+    margin-right: 20px;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+  }
+</style>
+<body class="container">
+  <div>
+       <div class="user">
+    <img class="img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvPysZkXAfh-
+    zCpnc5BCSVq5sLCK_uGJyiYF0vYAtFqwv8CWsRQ_CzllDbzP9bSeFkdPw&usqp=CAU" alt="">
+    <h2>Kimdir</h2>
+  </div>
+  <form 
+  class="form" 
+  action="/api/accaunt/addpost"
+  enctype="multipart/form-data" 
+  method="post">
+    <div class="">
+      <input type="file" name="video" id="" placeholder="video upload">
+    </div>
+    <div class="">
+      <input type="text" name="title" placeholder="video's title">
+    </div>
+    <div class="">
+      <input type="text" name="hashteg" placeholder="video's hashtegs">
+    </div>
+    <div>
+      <button class="" type="submit">Add content</button> 
+    </div>
+  </form>
+ 
+  </div>
+  <div>
+    <h2>Posts</h2>
+    <div>
+      
+    </div>
+  </div>
+</body>
+</html>
