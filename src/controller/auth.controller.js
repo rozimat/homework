@@ -19,7 +19,7 @@ const login = async (req, res) => {
       return res.render("/api/auth/login");
     }
 
-    const users =await  UsersData.read();
+    const users = await  UsersData.read();
 
     const findUser = users.find((user) => user.username === username);
      const solve = await bcrypt.compare(password, findUser.password);
@@ -31,16 +31,13 @@ const login = async (req, res) => {
       res.cookie("token", token, {
         maxAge: 8640000,
       });
-     res.render('index');
-     const tokens = req.cookies.token ;
-     if (tokens){
       res.redirect('/');
-    }
+    
     }
     
 }
 
-const register = async (req, res, next) => {
+const register = async (req, res) => {
   try {
   const usersData = await UsersData.read();
   const { username, password, name } = req.body;
@@ -78,7 +75,7 @@ const register = async (req, res, next) => {
     });
     await UsersData.write(data);
    
-    res.render('index');
+    res.redirect('/');
     res.status(201).json({ message: "succsesss"})
    }
   } catch (error) {
@@ -86,7 +83,7 @@ const register = async (req, res, next) => {
   }
 }
 module.exports = {
-  
-  register,
   login,
+  register,
+  
 }

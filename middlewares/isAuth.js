@@ -6,8 +6,6 @@ const isAuth = (req, res, next) => {
     const user = jwt.verify(token); 
     console.log(user);
     if (!token || !user ) return  res.redirect("/api/auth/login");
-    
-    
       res.render('index');
       req.user = user;
       next();
